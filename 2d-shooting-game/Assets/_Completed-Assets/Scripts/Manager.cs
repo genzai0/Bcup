@@ -6,6 +6,9 @@ namespace CompletedAssets
 	{
 		// Playerプレハブ
 		public GameObject player;
+
+        // Boss
+        public GameObject boss;
 	
 		// タイトル
 		private GameObject title;
@@ -29,6 +32,7 @@ namespace CompletedAssets
 			// ゲームスタート時に、タイトルを非表示にしてプレイヤーを作成する
 			title.SetActive (false);
 			Instantiate (player, player.transform.position, player.transform.rotation);
+            Instantiate(boss, boss.transform.position, boss.transform.rotation);
 		}
 
 		public void GameOver ()
@@ -41,7 +45,7 @@ namespace CompletedAssets
 		public bool IsPlaying ()
 		{
 			// ゲーム中かどうかはタイトルの表示/非表示で判断する
-			return title.activeSelf == false;
+			return ((title.activeSelf == false));
 		}
 	}
 }
